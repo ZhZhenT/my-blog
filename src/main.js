@@ -11,14 +11,14 @@ Vue.config.productionTip = false
 Vue.directive('hljs', el => {
 let blocks = el.querySelectorAll('code');
 console.log(el,blocks)
-Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+Array.prototype.forEach.call(blocks, h ljs.highlightBlock);
 });
 */
 
 Vue.directive('hljs', {
-  inserted: function (el) {
+  inserted: function (el, obj) {
     let blocks = el.querySelectorAll('code')
-    console.log(blocks, 1)
+    blocks[0].innerHTML = obj.value
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
   },
   componentUpdated: function (el, obj) {
@@ -29,6 +29,9 @@ Vue.directive('hljs', {
 })
 
 new Vue({
+  data: {
+    app: 'zheshiapp'
+  },
   router,
   store,
   render: h => h(App)

@@ -1,38 +1,29 @@
 <template>
   <div id="app">
 
-    <div class="post-content" v-hljs="msg">
-      <pre><code>{{msg}}</code></pre>
-    </div>
-
-    <button @click="bindclickupdatemsg">修改</button>
-
+    <!--<hliscode></hliscode>-->
+    <testdata></testdata>
+    <testdata></testdata>
+    <testdata></testdata>
   </div>
 </template>
 <script>
-
-const msg = `  #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-  }`
-
+import testdata from './views/testdata'
+import hliscode from './components/hljscode.vue'
 export default {
   data () {
     return {
-      msg: msg
+
     }
+  },
+  components: {
+    hliscode,
+    testdata
   },
   computed: {
 
   },
   methods: {
-
-    bindclickupdatemsg () {
-      this.msg = `#app`
-    }
 
   },
   mounted () {
